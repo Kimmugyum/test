@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta chargset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body {
+        font-size : 30px;
+    }
+    #top {
+        background-color : darkslategray;
+        width : 150px;
+        height : 100px;
+    }
+
+    #color{
+        background-color:grey;
+
+    }
+    
+    .orange {
+        background-color :orange;
+        text-align : center;
+        color : white;
+        width : 150px;
+        height : 100px
+    }
+    .yellow {
+        background-color :orange;
+        text-align : center;
+        color : white;
+        width : 150px;
+        height : 100px
+    }
+    td {
+        background-color : darkgray;
+        color : white;
+        text-align : center;
+        width : 150px;
+        height : 100px
+    }
+
+
+    </style>
+</head>
+<body>
+    <table border = "1">
+    <thead>
+        <tr>
+            <th colspan="4" id = "top"></th>
+        </tr>
+        <tr>
+            <td id = "color" colspan ="3" align = "center" color = "white">AC</td>
+            <td class = "orange" id = "add">/</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class = "number">7</td>
+            <td class = "number">8</td>
+            <td class = "number">9</td>
+            <td class = "orange" id = "add">*</td>
+        </tr>
+        <tr>
+            <td class = "number">4</td>
+            <td class = "number">5</td>
+            <td class = "number">6</td>
+            <td class = "orange" id = "add">-</td>
+        </tr>
+        <tr>
+                <td class = "number">1</td>
+                <td class = "number">2</td>
+                <td class = "number">3</td>
+                <td class = "orange" id = "add">+</td>
+            </tr>
+        <tr>
+            <td colspan = "2" class = "number">0</td>
+            <td>.</td>
+            <td class = "yellow" id = "result">=</td>
+        </tr>
+    </table>
+    <script>
+        var numberCheck;
+        var check;
+        function clickHandler() // 숫자 및 연산자 클릭하면 그 값이 나옴
+        {
+           var a = document.getElementById("top")
+           var b = this.innerText
+           a.innerText = a.innerText + b
+           var c = document.getElementById("result").onclick
+           // =버튼을 누른다음에 숫자를 클릭시 그 숫자가 다시 나와야한다. a.innerText = '' + b
+           // 빈칸 + this.innerText 3+3 = 6 그다음 3누르면 3이나와야한다. 결과값클릭후 그 값이나와야한다.
+           if(!isNaN(this.innerText)) //숫자 및 연산자 비교
+           {
+              numberCheck = true; // flag 값
+           }
+           else{
+               numberCheck = false;
+           }
+           if(check)
+           {
+               check = false
+               a.innerText = `` + b
+
+           }
+        }
+            
+        function reset() //top에 있는 innerText를 초기화
+        {
+            var a = document.getElementById("top")
+            a.innerText = '';     
+        }
+        function result() // 결과값
+        {
+            var a = document.getElementById("top")
+            var b = a.innerText
+            if(numberCheck) // ex) 5+5 = 10, +5- = +5- 맨마지막 기호가 연산자아닐시 결과값이 나옴
+            {
+                a.innerText = eval(b)
+                check = true;
+            }
+        }
+
+        var number = document.getElementsByClassName("number"); // 숫자에다가 클릭이벤트를 넣기
+        for(var i = 0; i < number.length; i++){
+            number[i].addEventListener('click', clickHandler);
+        }
+        
+        var AC = document.getElementById("color"); // AC버튼에 reset이벤트 넣기
+            AC.addEventListener('click', reset);
+        
+        var result2 = document.getElementById("result") // = 버튼에 클릭이벤트 넣기
+            result2.addEventListener('click', result);
+
+        var operator = document.getElementsByClassName("orange") // 연산자에다가 클릭이벤트넣기
+        {
+            for(var i =0; i < operator.length; i++)
+            {
+            operator[i].addEventListener('click', clickHandler)
+            }
+        }
+            
+        
+
+        // {
+        //     var a = document.getElementById("top");
+        //     var b = document.getElementsByTagName("td");
+        //     var c = b.innerText
+        //     a.innerText = c.innerText;
+        // }
+        // var target = document.querySelectorAll('#target');
+        // for(var i = 0; i < target.length; i++){
+        // var c = target[i].addEventListener('click', clickHandler)
+        // }
+
+        // function number()
+        // { 
+            // alert("Test");
+            /*var a = document.getElementsByTagName("td");
+            for(var i = 0; i < a.length; i++)
+            {
+                if(isNaN(a[i].innerText) == false)
+                {
+
+
+
+                   
+                }
+                */
+        // }
+    </script>
+</body>
+</html>
