@@ -1,0 +1,39 @@
+<style>
+    body {
+        font-size : 30px;
+    }
+    #top {
+        background-color : darkslategray;
+        width : 150px;
+        height : 100px;
+    }
+
+    #color{
+        background-color:grey;
+
+    }
+    
+    .orange {
+        background-color :orange;
+        text-align : center;
+        color : white;
+        width : 150px;
+        height : 100px
+    }
+    .yellow {
+        background-color :orange;
+        text-align : center;
+        color : white;
+        width : 150px;
+        height : 100px
+    }
+    td {
+        background-color : darkgray;
+        color : white;
+        text-align : center;
+        width : 150px;
+        height : 100px
+    }
+
+
+</style>
