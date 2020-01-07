@@ -10,7 +10,7 @@
            // 빈칸 + this.innerText 3+3 = 6 그다음 3누르면 3이나와야한다. 결과값클릭후 그 값이나와야한다.
            if(!isNaN(this.innerText)) //숫자 및 연산자 비교
            {
-              numberCheck = true; // flag 값
+              numberCheck = true; // flag값
            }
            else{
                numberCheck = false;
