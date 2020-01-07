@@ -1,4 +1,3 @@
-    <script>
         var numberCheck;
         var check;
         function clickHandler() // 숫자 및 연산자 클릭하면 그 값이 나옴
@@ -58,4 +57,3 @@
             operator[i].addEventListener('click', clickHandler)
             }
         }
-        </script>
